@@ -9,22 +9,22 @@ using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-    public class PersonsController : Controller
+    public class KhachHangsController : Controller
     {
         private readonly MvcMovieContext _context;
 
-        public PersonsController(MvcMovieContext context)
+        public KhachHangsController(MvcMovieContext context)
         {
             _context = context;
         }
 
-        // GET: Persons
+        // GET: KhachHangs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Person.ToListAsync());
+            return View(await _context.KhachHang.ToListAsync());
         }
 
-        // GET: Persons/Details/5
+        // GET: KhachHangs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +32,39 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            var khachHang = await _context.KhachHang
+                .FirstOrDefaultAsync(m => m.KhachHangID == id);
+            if (khachHang == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(khachHang);
         }
 
-        // GET: Persons/Create
+        // GET: KhachHangs/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Persons/Create
+        // POST: KhachHangs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,PersonCode,FullName")] Person person)
+        public async Task<IActionResult> Create([Bind("KhachHangID,TenKhachHang")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(person);
+                _context.Add(khachHang);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(khachHang);
         }
 
-        // GET: Persons/Edit/5
+        // GET: KhachHangs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person.FindAsync(id);
-            if (person == null)
+            var khachHang = await _context.KhachHang.FindAsync(id);
+            if (khachHang == null)
             {
                 return NotFound();
             }
-            return View(person);
+            return View(khachHang);
         }
 
-        // POST: Persons/Edit/5
+        // POST: KhachHangs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,PersonCode,FullName")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("KhachHangID,TenKhachHang")] KhachHang khachHang)
         {
-            if (id != person.ID)
+            if (id != khachHang.KhachHangID)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace MvcMovie.Controllers
             {
                 try
                 {
-                    _context.Update(person);
+                    _context.Update(khachHang);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.ID))
+                    if (!KhachHangExists(khachHang.KhachHangID))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace MvcMovie.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(khachHang);
         }
 
-        // GET: Persons/Delete/5
+        // GET: KhachHangs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,30 +123,30 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            var khachHang = await _context.KhachHang
+                .FirstOrDefaultAsync(m => m.KhachHangID == id);
+            if (khachHang == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(khachHang);
         }
 
-        // POST: Persons/Delete/5
+        // POST: KhachHangs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var person = await _context.Person.FindAsync(id);
-            _context.Person.Remove(person);
+            var khachHang = await _context.KhachHang.FindAsync(id);
+            _context.KhachHang.Remove(khachHang);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonExists(int id)
+        private bool KhachHangExists(int id)
         {
-            return _context.Person.Any(e => e.ID == id);
+            return _context.KhachHang.Any(e => e.KhachHangID == id);
         }
     }
 }

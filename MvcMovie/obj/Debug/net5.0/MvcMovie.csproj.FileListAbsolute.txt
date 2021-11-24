@@ -191,3 +191,13 @@ E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Delete.cshtml.g.
 E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Details.cshtml.g.cs
 E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Edit.cshtml.g.cs
 E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Index.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\KhachHangs\Create.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\KhachHangs\Delete.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\KhachHangs\Details.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\KhachHangs\Edit.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\KhachHangs\Index.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\HoaDons\Create.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\HoaDons\Delete.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\HoaDons\Details.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\HoaDons\Edit.cshtml.g.cs
+E:\GitHub\VScode\MvcMovie\obj\Debug\net5.0\Razor\Views\HoaDons\Index.cshtml.g.cs

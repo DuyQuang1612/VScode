@@ -15,4 +15,6 @@ using MvcMovie.Models;
         public DbSet<Movie> Movie { get; set; }
          public DbSet<Person> Person { get; set; }
          public DbSet<Student> Student { get; set; }
+         public DbSet<MvcMovie.Models.KhachHang> KhachHang { get; set; }
+         public DbSet<MvcMovie.Models.HoaDon> HoaDon { get; set; }
     }
