@@ -11,6 +11,9 @@ namespace MvcMovie.Models
         public int ID { get; set; }
 
     
+    [Required(ErrorMessage ="Không được bỏ trống")]
+        public string StudentID { get; set; }
+        
     public string TenHocSinh { get; set; }
 
     [Display(Name = "Release Date")]

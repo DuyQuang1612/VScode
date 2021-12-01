@@ -11,7 +11,8 @@ using MvcMovie.Models;
 namespace MvcMovie.Controllers
 {
     public class StudentsController : Controller
-    {
+    {   
+        private readonly Process strPro = new Process();
         private readonly MvcMovieContext _context;
 
         public StudentsController(MvcMovieContext context)
@@ -46,6 +47,12 @@ namespace MvcMovie.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
+            var model = _context.Student.ToList();  
+            if (model.Count()==0) ViewBag.StudentID = "ST001";
+            else {
+                var newKey = model.OrderByDescending(m => m.StudentID).FirstOrDefault().StudentID;
+                ViewBag.StudentID = strPro.GenerateKey(newKey);
+           } 
             return View();
         }
 
@@ -54,13 +61,21 @@ namespace MvcMovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TenHocSinh,NamSinh,HocLuc,XepHang,Rate")] Student student)
+        public async Task<IActionResult> Create([Bind("ID,TenHocSinh,NamSinh,HocLuc,XepHang,Rate,StudentID")] Student student)
         {
-            if (ModelState.IsValid)
+            try
+            {
+                 if (ModelState.IsValid)
             {
                 _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            }
+            catch
+            {
+                
+               ModelState.AddModelError("","Khóa chính bị trùng");
             }
             return View(student);
         }

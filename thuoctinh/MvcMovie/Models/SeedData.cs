@@ -23,7 +23,7 @@ namespace MvcMovie.Models
                 context.Student.AddRange(
                     new Student
                     {
-                        
+                        StudentID = "STD001",
                         XepHang = "Great",
                         Rate    =  "R",
                     }
