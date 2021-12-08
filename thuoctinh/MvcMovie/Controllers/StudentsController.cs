@@ -12,7 +12,7 @@ namespace MvcMovie.Controllers
 {
     public class StudentsController : Controller
     {   
-        private readonly Process strPro = new Process();
+        private readonly StringProcess strPro = new StringProcess();
         private readonly MvcMovieContext _context;
 
         public StudentsController(MvcMovieContext context)

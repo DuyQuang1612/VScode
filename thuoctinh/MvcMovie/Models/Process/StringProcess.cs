@@ -5,7 +5,7 @@ using MvcMovie.Models;
 using System.Text.RegularExpressions;
 namespace MvcMovie.Models
 {
-    public class Process{
+    public class StringProcess{
     public string GenerateKey (string id){
         string strkey = "";
         string numPart = "", strPart = "";

@@ -175,3 +175,6 @@ E:\GitHub\VScode\thuoctinh\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Delete
 E:\GitHub\VScode\thuoctinh\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Details.cshtml.g.cs
 E:\GitHub\VScode\thuoctinh\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Edit.cshtml.g.cs
 E:\GitHub\VScode\thuoctinh\MvcMovie\obj\Debug\net5.0\Razor\Views\Students\Index.cshtml.g.cs
+E:\GitHub\VScode\thuoctinh\MvcMovie\bin\Debug\net5.0\EPPlus.dll
+E:\GitHub\VScode\thuoctinh\MvcMovie\bin\Debug\net5.0\Microsoft.IO.RecyclableMemoryStream.dll
+E:\GitHub\VScode\thuoctinh\MvcMovie\bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll

@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
 using MvcMovie.Data;
+using MvcMovie.Models.Process;
+
 namespace MvcMovie.Controllers
 {
     public class MoviesController : Controller
     {
         private readonly MvcMovieContext _context;
+        private ExcelProcess _excelPro = new ExcelProcess();
 
         public MoviesController(MvcMovieContext context)
         {
