@@ -1,0 +1,43 @@
+﻿@model Elvys.Models.SinhVien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SinhVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaSinhVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSinhVien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLop }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
